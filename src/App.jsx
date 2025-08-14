@@ -19,7 +19,7 @@ function App() {
       const res = await fetch(`${API_URL}/api/shorten/`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ url: longUrl })
+        body: JSON.stringify({ original_url: longUrl })
       });
       if (!res.ok) throw new Error('Failed to shorten URL');
       const data = await res.json();
